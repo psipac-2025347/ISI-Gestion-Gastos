@@ -20,11 +20,10 @@
   "author": "",
   "license": "ISC",
   "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.5.2",
-      "onFail": "download"
-    }
+  "packageManager": { 
+  "name": "pnpm", 
+  "version": "11.5.2", 
+  "onFail": "download" }
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
@@ -45,5 +44,10 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.23.0",
     "zod": "^4.4.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "bcrypt"
+    ]
   }
 }
