@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from '../core/services/token.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+  constructor(private tokenService: TokenService, private router: Router) {}
+
+  logout(): void {
+    this.tokenService.removeToken();
+    this.router.navigate(['/login']);
+  }
+}
