@@ -5,9 +5,9 @@ const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
 
 client.connect()
   .then(() => {
-    console.log('✅ Conexión exitosa con el driver pg');
+    console.log(' Conexión exitosa con el driver pg');
     return client.end();
   })
   .catch((err) => {
-    console.error('❌ Error de conexión:', err.message);
+    console.error(' Error de conexión:', err.message);
   });
